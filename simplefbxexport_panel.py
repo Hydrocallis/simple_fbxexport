@@ -49,14 +49,14 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_previw(SIMPLEFBXECPORT_PT_panel,Panel
         box = layout.box()
 
         if get_filenameetc()[1] ==False:
-            box.label(text = f" ファイルを保存してください")
+            box.label(text = f"Please save the file")
 
         box.label(text = "File Path")
-        box.prop(props,"use_otherfilepath_bool")
+        box.prop(props,"use_otherfilepath_bool",text="Specify destination")
         if props.use_otherfilepath_bool== True:
             box.prop(props,"use_otherfilepath_path")
         box.label(text = f" {os.path.dirname(get_filenameetc()[0])}")
-        box.prop(props, "workspace_fbxfolder_path")
+        box.prop(props, "workspace_fbxfolder_path",text="Sub Folder")
         
         box2 = layout.box()
 
@@ -77,22 +77,22 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_nameset(SIMPLEFBXECPORT_PT_panel,Pane
         ########　名前の設定
         row = layout.row()
         
-        row.prop(props, "fbx_blenderfilename__bool",)
+        row.prop(props, "fbx_blenderfilename__bool",text="Use blender file name")
         row = layout.row()
-        row.label(text="名前リスト")
+        row.label(text="Name List")
         row = layout.row(align=True)
         row.prop(context.scene, "filenameset", text="")
         row.operator("simplefbxexport.add", text="", icon="ADD")
         row.operator("simplefbxexport.remove", text="", icon="REMOVE")
         
         row = layout.row()
-        row.prop(props, "fbx_selectfilename_bool")
+        row.prop(props, "fbx_selectfilename_bool",text="Name the selected object")
         row = layout.row()
-        row.prop(props, "fbx_name_replace_bool")
+        row.prop(props, "fbx_name_replace_bool",text="Overwrite file name")
         # row = layout.row()
         # row.prop(props, "clipstudio_body_modelset_bool")
         row = layout.row()
-        row.prop(props, "fbx_get_col_name_bool")
+        row.prop(props, "fbx_get_col_name_bool",text="Use the name of the given collection")
 
 
 class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_1(SIMPLEFBXECPORT_PT_panel,Panel):
@@ -113,22 +113,22 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_1(SIMPLEFBXECPORT_PT_panel,Panel):
 
         ########　出力関係
         row = layout.row()
-        row.prop(props, "copytexture_bool",text="テクスチャをコピーする")
+        row.prop(props, "copytexture_bool",text="Copy Texture")
         row = layout.row()
-        row.prop(props, "embedtexture_bool",text="テクスチャを埋め込む")
+        row.prop(props, "embedtexture_bool",text="Embed textures")
         row = layout.row()
-        row.prop(props, "fbx_selectbool",text="選択したオブジェクトを出力")
+        row.prop(props, "fbx_selectbool",text="Output selected objects")
         row = layout.row()
-        row.prop(props, "fbx_act_collection_bool",text="アクティブなコレクション内を出力")
-        row.label(text="出力の際にアクティブコレクションを指定する")
+        row.prop(props, "fbx_act_collection_bool",text="Output in active collection")
+        # row.label(text="Specify active collection for output")
         row = layout.row()
         row.prop(props, "workspace_fbxfolder_path_Collection")
 
         row = layout.row()
-        row.prop(props, "openfolder_bool",text="出力先のフォルダを開く")
+        row.prop(props, "openfolder_bool",text="Open output folder")
         ######## FBXを出力する
         row = layout.row()
-        row.operator("object.fbxexortsupport", text = "FBXを出力する")
+        row.operator("object.fbxexortsupport", text = "Output FBX")
 
 
 class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT3(SIMPLEFBXECPORT_PT_panel,Panel):
@@ -145,7 +145,7 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT3(SIMPLEFBXECPORT_PT_panel,Panel):
         props = context.scene.simplefbxecport_propertygroup
 
         row = layout.row()
-        row.prop(props, "fbx_children_recursive")
+        row.prop(props, "fbx_children_recursive",text="Select and output objects in the lower level as well")
 
 
 

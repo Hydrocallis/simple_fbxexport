@@ -38,7 +38,7 @@ class SIMPLEFBXECPORT_OT_FbxExort(Operator):
         bool=checkpath()  
 
         if bool == False:
-            self.report({'INFO'}, 'ファイルを保存して下さい。')
+            self.report({'INFO'}, 'Please save the file.')
 
             return {'FINISHED'}
 

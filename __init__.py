@@ -41,6 +41,50 @@ from .simplefbxexoprt_propertyGroup import *
 from .simplefbxexoprt_filelist import *
 
 
+
+# 翻訳辞書
+translation_dict = {
+    "en_US": {
+        ("*", "Name Setting"): "Name Setting",
+        ("*", "Simple Fbx Export"): "Simple Fbx Export",
+        ("*", "previw"): "previw",
+        ("*", "Export Setting"): "Export Setting",
+        ("*", "Other Setting"): "Other Setting",
+        ("*", "Please save the file"): "please save the file",
+   
+    },
+    "ja_JP": {
+		#　パネル関係の翻訳
+        ("*", "simple fbx export"): "FBX出力",
+        ("*", "Name Setting"): "ファイル名の設定",
+        ("*", "Simple Fbx Export"): "FBX簡単出力",
+        ("*", "previw"): "プレビュー",
+        ("*", "Export Setting"): "出力設定",
+        ("*", "Other Setting"): "その他設定",
+        ("*", "Please save the file"): "ブレンダーファイルを保存してください。",
+        ("*", "Specify destination"): "出力先を指定する",
+        ("*", "Sub Folder"): "サブフォルダー",
+        ("*", "Name List"): "名前をリスト化する",
+        ("*", "Use blender file name"): "ブレンダーのファイル名を使用",
+        ("*", "Name the selected object"): "選択したオブジェクト名を使用",
+        ("*", "Overwrite file name"): "ファイルを上書きする",
+        ("*", "Use the name of the given collection"): "指定したコレクション名を使用",
+        ("*", "Copy Texture"): "テクスチャをコピーする",
+        ("*", "Embed textures"): "コピーしたテクスチャを埋め込む",
+        ("*", "Output selected objects"): "選択したオブジェクトを出力",
+        ("*", "Output in active collection"): "アクティブなコレクション内を出力",
+        ("*", "Open output folder"): "出力フォルダを開く",
+        ("*", "Output FBX"): "FBXを出力する",
+        ("*", "Select and output objects in the lower level as well"): "選択した子オブジェクトも選択する",
+		#オペレーター関係の翻訳
+        #　オペレーターのリポートはツールチップスに入るみたい
+        ("*", "Please save the file."): "ファイルを保存してください。",
+
+
+    }
+}
+
+
 classes = (
 
 SIMPLEFBXECPORT_PropertyGroup,
@@ -93,7 +137,9 @@ def register():
 														)
 	bpy.types.Scene.fbxfilenameset_collection = bpy.props.CollectionProperty(type=SIMPLEFBXECPORT_PG_filenameset)
  	#filelist----
-   
+
+	# 翻訳辞書の登録
+	bpy.app.translations.register(__name__, translation_dict)
 
 def unregister():
 	for cls in reversed(classes):
@@ -106,6 +152,9 @@ def unregister():
 	del bpy.types.Scene.filenameset
 	del bpy.types.Scene.fbxfilenameset_collection
 	#filelist----
+
+	# 翻訳辞書の登録解除
+	bpy.app.translations.unregister(__name__)
 
 if __name__ == "__main__":
 	register()
