@@ -23,6 +23,7 @@ if "bpy" in locals():
 	reloadable_modules = [
 
     "simplefbxexport_op_fbx_export",
+    "simplefbxexport_def",
     "simplefbxexport_panel",
     "simplefbxexoprt_propertyGroup",
     "simplefbxexoprt_filelist",
@@ -46,7 +47,11 @@ SIMPLEFBXECPORT_PropertyGroup,
 
 SIMPLEFBXECPORT_OT_FbxExort,
 
-SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT,
+SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2,
+SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_previw,
+SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_nameset,
+SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_1,
+SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT3,
 
 #filelist----
 SIMPLEFBXECPORT_OT_Add_Operator,
@@ -54,7 +59,6 @@ SIMPLEFBXECPORT_OT_Remove_Operator,
 # SIMPLEFBXECPORT_PT_Panel,
 SIMPLEFBXECPORT_PG_filenameset,
 #filelist----
-
 )
 
 

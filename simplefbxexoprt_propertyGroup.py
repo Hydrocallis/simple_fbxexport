@@ -64,28 +64,9 @@ class SIMPLEFBXECPORT_PropertyGroup(PropertyGroup):
                 default = False,
                 update = clipstudio_body_modelset_bool,
                                 )
+#######　名前関係
 
-    def get_filepath(self):
-        p_sub = pathlib.Path(bpy.data.filepath)
-        p_sub = p_sub.parent
-        return str(p_sub)
 
-    # FBXファイルの出力先
-    workspace_path : StringProperty(
-                name="",
-                description="Path to workspace folder",
-                # default= blend_directory,
-                subtype='DIR_PATH',
-                get=get_filepath)
-
-    # サブフォルダを使うかどうか
-    # サブフォルダの名前
-    workspace_fbxfolder_path : StringProperty(
-                name="サブフォルダの名前",
-                description="workspace_fbxfolder_path",
-                default = "export_fbx",
-                # default= blend_directory,
-                subtype='FILE_NAME',)
 
     # コレクションのドロップリスト
     # https://blenderartists.org/t/blender-2-9-collectionproperty-howto/1312488/5 
@@ -96,21 +77,6 @@ class SIMPLEFBXECPORT_PropertyGroup(PropertyGroup):
         description="コレクションの名前が主力先のフォルダ名になる"
     )
 
-    # 選択したオブジェクトを主力する
-    fbx_selectbool : BoolProperty(
-                name = "選択したオブジェクトを主力",
-                default = False,
-                description="fbx_selectbool",
-
-                                )
-
-    # アクティブなコレクション内を出力
-    fbx_act_collection_bool : BoolProperty(
-                name = "アクティブなコレクション内を出力",
-                default = False,
-                description="fbx_act_collection_bool",
-
-                                )
 
     # コレクションの名前を使用する
     fbx_get_col_name_bool : BoolProperty(
@@ -120,13 +86,7 @@ class SIMPLEFBXECPORT_PropertyGroup(PropertyGroup):
 
                                 )
 
-    # 下の階層のオブジェクトも選択して出力する
-    fbx_children_recursive : BoolProperty(
-                name = "下の階層のオブジェクトも選択して出力する",
-                default = False,
-                description="fbx_children_recursive",
 
-                                )
 
     # 選択したオブジェクトの名前を付ける
     fbx_selectfilename_bool : BoolProperty(
@@ -142,6 +102,7 @@ class SIMPLEFBXECPORT_PropertyGroup(PropertyGroup):
                 description="fbx_name_replace_bool",
 
                                 )
+
 
     # ブレンダーのファイル名をつける
     fbx_blenderfilename__bool : BoolProperty(
@@ -175,3 +136,74 @@ class SIMPLEFBXECPORT_PropertyGroup(PropertyGroup):
                 # default= blend_directory,
                 subtype='DIR_PATH',
                     )
+
+
+#######　パス関係
+
+    # FBXファイルの出力先
+    def get_filepath(self):
+        p_sub = pathlib.Path(bpy.data.filepath)
+        p_sub = p_sub.parent
+        return str(p_sub)
+
+    workspace_path : StringProperty(
+                name="",
+                description="Path to workspace folder",
+                # default= blend_directory,
+                subtype='DIR_PATH',
+                get=get_filepath)
+
+    # サブフォルダを使うかどうか
+    # サブフォルダの名前
+    workspace_fbxfolder_path : StringProperty(
+                name="サブフォルダの名前",
+                description="workspace_fbxfolder_path",
+                default = "export_fbx",
+                # default= blend_directory,
+                subtype='FILE_NAME',)
+
+####### ブレンダー出力関係
+
+    # 選択したオブジェクトを主力する
+    fbx_selectbool : BoolProperty(
+                name = "選択したオブジェクトを出力",
+                default = False,
+                description="fbx_selectbool",
+
+                                )
+
+    # アクティブなコレクション内を出力
+    fbx_act_collection_bool : BoolProperty(
+                name = "アクティブなコレクション内を出力",
+                default = False,
+                description="fbx_act_collection_bool",
+
+                                )
+    copytexture_bool : BoolProperty(
+                name = "copy texture",
+                default = False,
+                description="",
+
+                                )
+    embedtexture_bool : BoolProperty(
+                name = "embed texture",
+                default = False,
+                description="",
+
+                                )
+
+    openfolder_bool : BoolProperty(
+                name = "Open Folder ",
+                default = False,
+                description="",
+
+                                )
+
+#####その他のオプション
+    # 下の階層のオブジェクトも選択して出力する
+    fbx_children_recursive : BoolProperty(
+                name = "下の階層のオブジェクトも選択して出力する",
+                default = False,
+                description="fbx_children_recursive",
+
+                                )
