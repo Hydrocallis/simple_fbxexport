@@ -13,7 +13,7 @@ from .simplefbxexport_def import *
 
 class SIMPLEFBXECPORT_OT_FbxExort(Operator):
     bl_idname = 'object.fbxexortsupport'
-    bl_label = 'fbxexortsupport'
+    bl_label = 'Export Fbx'
     bl_description = f" CLASS_NAME_IS={sys._getframe().f_code.co_name}\n ID_NAME_IS={bl_idname}\n FILENAME_IS={__file__}\n "
 
     # 実際の実行文

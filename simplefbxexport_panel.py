@@ -9,18 +9,13 @@ from bpy.types import (
 
 from .simplefbxexport_def import *
 
-
-
 # fbx出力関連
 class SIMPLEFBXECPORT_PT_panel:
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
     bl_category = "simple fbx export"
 
-
-
-
-        
+       
 
 class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2(SIMPLEFBXECPORT_PT_panel,Panel):
     bl_label = "Simple Fbx Export"
@@ -32,6 +27,7 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2(SIMPLEFBXECPORT_PT_panel,Panel):
         layout.operator("object.fbxexortsupport", text="",icon="EXPORT")
     def draw(self, context):
         pass
+
 
 class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_previw(SIMPLEFBXECPORT_PT_panel,Panel):
     bl_label = "previw"
@@ -45,7 +41,6 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_previw(SIMPLEFBXECPORT_PT_panel,Panel
         props = context.scene.simplefbxecport_propertygroup
 
         row = layout.row()
-        # row.operator("object.getfbxinformation", text="ファイルの保存先を自動入力")
         box = layout.box()
 
         if get_filenameetc()[1] ==False:
@@ -65,6 +60,7 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_previw(SIMPLEFBXECPORT_PT_panel,Panel
         box2.prop(props, "fbx_filename",text="")
 
         # row.label(text="※コレクショ名を優先")
+
 class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_nameset(SIMPLEFBXECPORT_PT_panel,Panel):
     bl_label = "Name Setting"
     bl_parent_id = "SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT1"
@@ -100,13 +96,11 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_1(SIMPLEFBXECPORT_PT_panel,Panel):
     bl_parent_id = "SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT1"
 
 
-
     def draw(self, context):
         ########　出力結果のプレビュー
         # print('###',get_filenameetc())
         layout = self.layout
         props = context.scene.simplefbxecport_propertygroup
-
 
 
         row = layout.row()
@@ -128,15 +122,13 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT2_1(SIMPLEFBXECPORT_PT_panel,Panel):
         row.prop(props, "openfolder_bool",text="Open output folder")
         ######## FBXを出力する
         row = layout.row()
-        row.operator("object.fbxexortsupport", text = "Output FBX")
+        row.operator("object.fbxexortsupport",text= "Export")
 
 
 class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT3(SIMPLEFBXECPORT_PT_panel,Panel):
     bl_label = "Other Setting"
     bl_parent_id = "SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT1"
     bl_options = {"DEFAULT_CLOSED"}
-
-
 
 
     def draw(self, context):
@@ -147,35 +139,3 @@ class SIMPLEFBXECPORT_PT_SETTINGFBXEXPORT3(SIMPLEFBXECPORT_PT_panel,Panel):
         row = layout.row()
         row.prop(props, "fbx_children_recursive",text="Select and output objects in the lower level as well")
 
-
-
-# class EXAMPLE_panel:
-#     bl_space_type = "VIEW_3D"
-#     bl_region_type = "UI"
-#     bl_category = "Example Tab"
-#     bl_options = {"DEFAULT_CLOSED"}
-
-
-# class EXAMPLE_PT_panel_1(EXAMPLE_panel, bpy.types.Panel):
-#     bl_idname = "EXAMPLE_PT_panel_1"
-#     bl_label = "Panel 1"
-
-#     def draw(self, context):
-#         layout = self.layout
-#         layout.label(text="This is the main panel.")
-
-# class EXAMPLE_PT_panel_2(EXAMPLE_panel, bpy.types.Panel):
-#     bl_parent_id = "EXAMPLE_PT_panel_1"
-#     bl_label = "Panel 2"
-
-#     def draw(self, context):
-#         layout = self.layout
-#         layout.label(text="First Sub Panel of Panel 1.")
-
-# class EXAMPLE_PT_panel_3(EXAMPLE_panel, bpy.types.Panel):
-#     bl_parent_id = "EXAMPLE_PT_panel_1"
-#     bl_label = "Panel 3"
-
-#     def draw(self, context):
-#         layout = self.layout
-#         layout.label(text="Second Sub Panel of Panel 1.")

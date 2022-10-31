@@ -74,9 +74,9 @@ translation_dict = {
         ("*", "Output selected objects"): "選択したオブジェクトを出力",
         ("*", "Output in active collection"): "アクティブなコレクション内を出力",
         ("*", "Open output folder"): "出力フォルダを開く",
-        ("*", "Output FBX"): "FBXを出力する",
         ("*", "Select and output objects in the lower level as well"): "選択した子オブジェクトも選択する",
-		#オペレーター関係の翻訳
+		#オペレーター関係の翻訳 よくわからんオペレーター翻訳の謎。スペースがあると翻訳できない。
+        ("*", "Export"): "FBXを出力する",
         #　オペレーターのリポートはツールチップスに入るみたい
         ("*", "Please save the file."): "ファイルを保存してください。",
 
