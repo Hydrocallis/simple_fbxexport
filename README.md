@@ -25,6 +25,8 @@ The file will be saved in a subfolder at that destination.
 ## File naming is also easily configurable.
 
 ### Functions
+![array set](./gif_2.gif)
+
 1.Listing of predefined files
 
 2.Add names of selected objects
