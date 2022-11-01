@@ -26,7 +26,11 @@ The file will be saved in a subfolder at that destination.
 
 ### Functions
 1.Listing of predefined files
+
 2.Add names of selected objects
+
 3.Use the name of the blender file
+
 4.Use the name of the collection you used
+
 
