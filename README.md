@@ -20,4 +20,6 @@ destination where you want the file to be saved.
 
 The file will be saved in a subfolder at that destination.
 
+![array set](./gif_1.gif)
+
 
