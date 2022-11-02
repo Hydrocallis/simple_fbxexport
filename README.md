@@ -18,14 +18,7 @@ The basic usage of this add-on is to
 Save the blender file, or
 destination where you want the file to be saved.
 
-The file will be saved in a subfolder at that destination.
 
-![array set](./gif_1.gif)
-
-## File naming is also easily configurable.
-
-### Functions
-![array set](./gif_2.gif)
 
 1.Listing of predefined files
 
@@ -35,4 +28,5 @@ The file will be saved in a subfolder at that destination.
 
 4.Use the name of the collection you used
 
-
+please read wiki
+https://github.com/Hydrocallis/simple_fbxexport/wiki
